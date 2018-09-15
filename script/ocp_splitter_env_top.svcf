@@ -1,0 +1,32 @@
+#------------------------------------------------------------------------------
+# Copyright (c) 2017 Elsys Eastern Europe
+# All rights reserved.
+#------------------------------------------------------------------------------
+# File name  : ocp_splitter_env_top.svcf
+# Developer  : Luka Savic
+# Date       : 
+# Description: 
+# Notes      : 
+#
+#------------------------------------------------------------------------------
+
+window new WaveWindow -name "Waveform 1"
+
+set id [waveform add -signals [subst  {
+	{simulator::[format {ocp_splitter_tb_top.ocp_uvc_if_slave_inst.clock}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{simulator::[format {ocp_splitter_tb_top.ocp_uvc_if_slave_inst.reset_n}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{simulator::[format {ocp_splitter_tb_top.ocp_uvc_if_slave_inst.signal}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{simulator::[format {ocp_splitter_tb_top.ocp_uvc_if_master_inst.clock}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{simulator::[format {ocp_splitter_tb_top.ocp_uvc_if_master_inst.reset_n}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{simulator::[format {ocp_splitter_tb_top.ocp_uvc_if_master_inst.signal}]}
+	} ]]

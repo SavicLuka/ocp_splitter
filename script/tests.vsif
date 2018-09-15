@@ -1,0 +1,3 @@
+test_ocp_splitter_example      	{count 10;}
+test_ocp_splitter_example_reset	{count 10;}
+

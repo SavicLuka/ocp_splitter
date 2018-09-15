@@ -1,0 +1,23 @@
+#------------------------------------------------------------------------------
+# Copyright (c) 2017 Elsys Eastern Europe
+# All rights reserved.
+#------------------------------------------------------------------------------
+# File name  : ocp_uvc_env_top.svcf
+# Developer  : Luka Savic
+# Date       : 
+# Description: 
+# Notes      : 
+#
+#------------------------------------------------------------------------------
+
+window new WaveWindow -name "Waveform 1"
+
+set id [waveform add -signals [subst  {
+	{simulator::[format {ocp_uvc_tb_top.ocp_uvc_if_inst.clock}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{simulator::[format {ocp_uvc_tb_top.ocp_uvc_if_inst.reset_n}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{simulator::[format {ocp_uvc_tb_top.ocp_uvc_if_inst.signal}]}
+	} ]]
